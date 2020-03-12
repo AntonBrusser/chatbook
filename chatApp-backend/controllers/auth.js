@@ -67,7 +67,7 @@ module.exports = {
             .status(HttpStatus.INTERNAL_SERVER_ERROR)
             .json({message: 'No empty fields allowed'});
         }
-        await User.findOne({username: Helpers.firstUpper(req.body.username)})
+        await User.findOne({username: Helper.firstUpper(req.body.username)})
         .then(user => {
             if (!user){
                 return res

@@ -6,7 +6,7 @@ const User = require ('../models/userModels');
 module.exports = {
     AddPost(req, res) {
         const schema = Joi.object().keys({
-            username: Joi.string().required()
+            post: Joi.string().required()
         });
         const { error } = Joi.validate(req.body, schema);
         if (error && error.details) {
